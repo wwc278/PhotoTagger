@@ -1,0 +1,19 @@
+<h1><%= current_user.name %>'s Photos</h1>
+
+<form action="<%= photos_url %>" method="post" accept-charset="utf-8">
+	<input
+    type="hidden"
+		name="authenticity_token"
+		value="<%= form_authenticity_token %>"
+		id="authenticity_token">
+
+  <label for="photo_url">URL</label>
+  <input
+    type="text"
+    name="photo[url]"
+    value="<%= @photo.url %>"
+    id="photo_url">
+
+
+	<p><input type="submit" value="Continue &rarr;"></p>
+</form>
