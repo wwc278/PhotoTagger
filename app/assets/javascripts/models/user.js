@@ -1,0 +1,4 @@
+// App.Model.User = function(){
+//
+// }
+//

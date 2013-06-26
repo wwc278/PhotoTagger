@@ -1,0 +1,26 @@
+<ul>
+  <% _(photos).each(function(photo){ %>
+    <li>
+      <a href="#" class="photo" data-id="<%= photo.id %>">
+        <img src="<%= photo.url %>">
+      </a>
+      <button data-id='<%= photo.id %>' class='delete'>
+        Delete This Photo
+      </button>
+    </li>
+
+  <% }); %>
+</ul>
+
+<form accept-charset="utf-8">
+
+  <label for="photo_url">URL</label>
+  <input
+    type="text"
+    name="photo[url]"
+    value=""
+    id="photo_url">
+
+
+	<p><input type="submit" value="Add Photo"></p>
+</form>
