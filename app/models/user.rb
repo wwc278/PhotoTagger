@@ -14,12 +14,14 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   attr_accessible :name, :password
 
-  has_many :photos, :foreign_key => :owner_id
+  has_many :photos, :foreign_key => :owner_id, :dependent => :destroy
+  has_many :tags, :dependent => :destroy
+  has_many :photos_appearances, :through => :tags, :source => :photo
 
   validates :name, :password, :presence => true
 
   def password
-    @password ||= Password.new(self.password_digest)
+    @password ||= self.password_digest
   end
 
   def password=(password)

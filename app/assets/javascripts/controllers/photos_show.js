@@ -30,6 +30,6 @@ App.Controllers.PhotoShow.prototype.installHandlers = function(){
     event.preventDefault()
     var x_coord = event.offsetX / event.currentTarget.width;
     var y_coord = event.offsetY / event.currentTarget.height;
-    // left off here
+
   })
 }

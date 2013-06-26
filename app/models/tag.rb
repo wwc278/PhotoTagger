@@ -12,5 +12,8 @@
 #
 
 class Tag < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :user_id, :photo_id, :x_coord, :y_coord
+
+  belongs_to :user
+  belongs_to :photo
 end
